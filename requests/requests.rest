@@ -1,0 +1,15 @@
+GET http://localhost:3003/api/blogs
+
+###
+POST http://localhost:3003/api/blogs
+Content-Type : application/json
+
+{
+    "title" : "Nachmusik",
+    "author" : "Mozart",
+    "url" : "https://www.youtube.com/watch?v=AbtMuM34QOE",
+    "likes" : 380000000
+}
+
+###
+DELETE http://localhost:3001/api/blogs/63f9cae3e7f61a6b43b89ac
