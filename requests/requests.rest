@@ -13,3 +13,102 @@ Content-Type : application/json
 
 ###
 DELETE http://localhost:3001/api/blogs/63f9cae3e7f61a6b43b89ac
+###
+POST http://localhost:3001/api/users
+Content-Type: application/json
+
+{
+    "username" : "Jalraaj",
+    "name" : "Sai Joshi",
+    "password" : "tu_likh_de_mera_use"
+}
+###
+POST http://localhost:3001/api/users
+Content-Type: application/json
+
+{
+    "username" : "Dhoni M",
+    "name" : "Mahendra Singh Dhoni",
+    "password" : "csk_is_the_best_team_period"
+}
+
+###
+POST http://localhost:3001/api/users
+Content-Type: application/json
+
+{
+    "username" : "The Future",
+    "name" : "Nayvadius DeMun Cash",
+    "password" : "roll_up_some_commas"
+}
+###
+POST http://localhost:3001/api/users
+Content-Type: application/json
+
+{
+    "username" : "Travis Scott",
+    "name" : "Jacques Bermon Webster II",
+    "password" : "life_is_mysoginy"
+}
+
+###
+POST http://localhost:3001/api/blogs
+Content-Type: application/json
+
+{
+    "title" : "a2",
+    "author" : "Jalraaj",
+    "url" : "https://www.youtube.com/watch?v=RGm-zg9uXDQ",
+    "likes" : 3900000,
+    "userId" : "64340ee4b71f2576a7086b99"
+}
+###
+
+POST http://localhost:3001/api/blogs
+Content-Type : application/json
+
+{
+    "title" : "b2",
+    "author" : "Dhoni M",
+    "url" : "https://www.youtube.com/watch?v=wbdQ0pqkNOQ",
+    "likes" : 400000,
+    "userId" : "64340efeb71f2576a7086b9d"
+}
+###
+POST http://localhost:3001/api/blogs
+Content-Type : application/json
+
+{
+    "title" : "c2",
+    "author" : "The Future",
+    "url" : "https://www.youtube.com/watch?v=nh4n59u45G",
+    "likes" : 5600000,
+    "userId" : "64340f18b71f2576a7086ba4"
+}
+###
+DELETE http://localhost:3001/api/users/643185f9c4ec8e3b1c84f3c8
+
+###
+POST http://localhost:3001/api/login
+Content-Type: application/json
+
+{
+    "username" : "Travis Scott",
+    "password" : "life_is_mysoginy"
+}
+###
+POST http://localhost:3001/api/blogs
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlRyYXZpcyBTY290dCIsImlkIjoiNjQzYzIyZmQ3NGJmYTYwYmU2MWNmNzljIiwiaWF0IjoxNjgxNjYyNzYxLCJleHAiOjE2ODE2NjYzNjF9.Zs4tLGlKQ51CbUdiEZVI5gHqZKGzhtBpb32bA1LUXdU
+
+{
+    "title" : "Please dont make me click on penis",
+    "url" : "https://www.youtube.com/watch?v=2oYmwVq_W-c&list=P",
+    "likes" : 780000
+}
+###
+DELETE http://localhost:3001/api/blogs/643c239574bfa60be61cf7a2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlRyYXZpcyBTY290dCIsImlkIjoiNjQzYzIyZmQ3NGJmYTYwYmU2MWNmNzljIiwiaWF0IjoxNjgxNjYyNzYxLCJleHAiOjE2ODE2NjYzNjF9.Zs4tLGlKQ51CbUdiEZVI5gHqZKGzhtBpb32bA1LUXdU
+###
+POST http://localhost:3001/api/practice
+cat: "Ultra"

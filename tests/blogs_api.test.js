@@ -5,30 +5,31 @@ const Blog = require("../models/blog")
 
 const api = supertest(app)
 
-let initialBlogLength = 0
-
 const blogsInDb = async () => {
+    
     const blogs = await Blog.find({})
-    initialBlogLength = blogs.length
+    
     return blogs.map(blog => blog.toJSON())
 }
 
 describe('integration testing', () => {
 
-    test('notes are returned as json',  async () => {
+    test.only('notes are returned as json',  async () => {
         await api
             .get('/api/blogs')
             .expect(200)
             .expect('Content-Type', /application\/json/)
     })
 
-    test('correct number of blog posts are returned' , async () => {
+    test.only('correct number of blog posts are returned' , async () => {
         const response = await api.get('/api/blogs')
 
-        expect(response.body).toHaveLength(initialBlogLength)
+        const finalBlogs = await blogsInDb()
+
+        expect(response.body).toHaveLength(finalBlogs.length)
     })
 
-    test('id is defined as id and not _id', async () => {
+    test.only('id is defined as id and not _id', async () => {
         const response = await api.get('/api/blogs')
 
         expect(response.body.forEach(item => {
@@ -37,7 +38,7 @@ describe('integration testing', () => {
         }))
     })
 
-    test('notes are getting added successfully', async () => {
+    test.only('notes are getting added successfully', async () => {
 
         const newBlog = {
             title : "Destros De Lestro",
@@ -56,7 +57,6 @@ describe('integration testing', () => {
         expect(blogsContent).toContain(
             "Destros De Lestro"
         )
-            
     })
 
     test('missing likes property defaults to zero', async () => {
@@ -120,7 +120,7 @@ describe( "put request" , () => {
 
 describe( "delete request", () => {
 
-    test.only('checking whether the blog exists' , async () => {
+    test('checking whether the blog exists' , async () => {
         const blogs = await blogsInDb() //asynchronous function to fetch all the blogs in the db
         const blogToBeDeleted = blogs[0]
         const blogToBeDeletedId = blogToBeDeleted.id
@@ -131,7 +131,7 @@ describe( "delete request", () => {
             .expect('Content-Type', /application\/json/)
     })
 
-    test.only('deleting blogs' , async () =>  {
+    test('deleting blogs' , async () =>  {
         const blogsInStart = await blogsInDb() //asynchronous function to fetch all the blogs in the db
         const blogToBeDeleted = blogsInStart[0]
         const blogToBeDeletedId = blogToBeDeleted.id
